@@ -1,3 +1,4 @@
+import HangingPaperCranes from "@/components/hanging-paper-cranes";
 import WorkCardGallery from "@/components/work-card-gallery";
 import type { WorkProjectImages } from "@/data/work-projects";
 
@@ -22,8 +23,9 @@ export default function WorkCard({
           <span className="shrink-0 text-right">{category}</span>
         </div>
 
-        <div className="overflow-hidden rounded-t-xl rounded-b-none border border-[#E0E0E0] bg-[#F9F9F9]">
-          <div className="p-4 sm:p-5 md:p-6">
+        <div className="relative overflow-hidden rounded-t-xl rounded-b-none border border-[#E0E0E0] bg-[#F9F9F9]">
+          <HangingPaperCranes variant="card" seed={title} />
+          <div className="relative z-10 p-4 sm:p-5 md:p-6">
             <WorkCardGallery images={images} />
           </div>
         </div>

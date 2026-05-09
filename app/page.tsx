@@ -22,8 +22,13 @@ export default function Home() {
       <main className="font-inter">
         <section
           id="hero"
-          className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden text-center text-pretty"
+          className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white text-center text-pretty"
         >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-44 bg-linear-to-b from-white/0 via-[#FAFAFA]/80 to-[#F6F6F6]"
+          />
+
           <div className="absolute top-0 left-0 z-50 w-full">
             <Header />
           </div>

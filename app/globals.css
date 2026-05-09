@@ -171,3 +171,412 @@
   overflow-x: hidden !important;
   width: 100% !important;
 }
+
+.paper-crane-garland {
+  animation: paper-crane-idle-sway 7.2s ease-in-out infinite;
+  transform-origin: 50% 0;
+}
+
+.paper-crane-garland-right {
+  animation-delay: -2.8s;
+  animation-duration: 7.9s;
+}
+
+.footer-scene {
+  isolation: isolate;
+}
+
+.footer-fireworks-canvas {
+  z-index: 0;
+  opacity: 0.92;
+  filter: saturate(1.24) contrast(1.06);
+  mix-blend-mode: screen;
+}
+
+.footer-lantern-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  perspective: 1000px;
+  pointer-events: none;
+}
+
+.footer-lantern {
+  position: absolute;
+  aspect-ratio: 0.46;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
+}
+
+.footer-lantern-mount {
+  --footer-lantern-edge: clamp(94px, 7.1vw, 142px);
+  --footer-lantern-width: clamp(100px, 8vw, 122px);
+  --footer-stick-length: clamp(132px, 10vw, 190px);
+  position: absolute;
+  top: clamp(28px, 4.6vw, 46px);
+  width: clamp(190px, 16vw, 260px);
+  height: clamp(260px, 33vw, 380px);
+  transform-style: preserve-3d;
+}
+
+.footer-lantern-mount-left {
+  left: 0;
+  transform: translateZ(44px);
+}
+
+.footer-lantern-mount-right {
+  right: 0;
+  transform: translateZ(44px);
+}
+
+.footer-lantern-stick {
+  position: absolute;
+  top: 18px;
+  z-index: 12;
+  width: var(--footer-stick-length);
+  height: 9px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(255 207 136 / 0.22),
+      transparent 36%,
+      rgb(0 0 0 / 0.3) 100%
+    ),
+    linear-gradient(
+      98deg,
+      rgb(255 213 146 / 0.18),
+      transparent 24%,
+      rgb(67 28 12 / 0.2) 62%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, #3d180b, #8a471e 38%, #b56b31 55%, #4c1e0e);
+  box-shadow:
+    inset 0 1px 0 rgb(255 239 199 / 0.24),
+    inset 0 -2px 3px rgb(0 0 0 / 0.44),
+    0 8px 18px rgb(0 0 0 / 0.42);
+}
+
+.footer-lantern-mount-left .footer-lantern-stick {
+  left: 0;
+  border-radius: 0 999px 999px 0;
+}
+
+.footer-lantern-mount-right .footer-lantern-stick {
+  right: 0;
+  border-radius: 999px 0 0 999px;
+}
+
+.footer-lantern-stick::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    rgb(19 8 3 / 0.32),
+    transparent 28% 72%,
+    rgb(19 8 3 / 0.38)
+  );
+  mix-blend-mode: multiply;
+}
+
+.footer-lantern-side {
+  top: 27px;
+  width: var(--footer-lantern-width);
+  z-index: 3;
+  transform: translateZ(80px) scale(var(--lantern-scale));
+}
+
+.footer-lantern-left {
+  left: var(--footer-lantern-edge);
+  right: auto;
+}
+
+.footer-lantern-right {
+  right: var(--footer-lantern-edge);
+  left: auto;
+}
+
+.footer-lantern-suspension {
+  position: relative;
+  height: 100%;
+  transform-origin: 50% 0;
+  animation: footer-lantern-idle-sway 7.4s ease-in-out infinite;
+}
+
+.footer-lantern-right .footer-lantern-suspension {
+  animation-delay: -3.2s;
+  animation-duration: 8.1s;
+}
+
+.footer-scene:not([data-active="true"]) .footer-lantern-inner-light {
+  animation-play-state: paused;
+}
+
+.footer-lantern-wire {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  z-index: 1;
+  width: 2px;
+  height: 33%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #160807, #8c2d1d 46%, #210d0a);
+  box-shadow: 0 0 10px rgb(255 91 38 / 0.18);
+  transform: translateX(-50%);
+}
+
+.footer-lantern-hook {
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  z-index: 5;
+  width: 42%;
+  height: 8%;
+  border-radius: 999px 999px 5px 5px;
+  background: linear-gradient(180deg, #221b18, #030303 70%, #0e0a08);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.16),
+    0 8px 18px rgb(0 0 0 / 0.36);
+  transform: translateX(-50%);
+}
+
+.footer-lantern-cap {
+  position: absolute;
+  left: 50%;
+  z-index: 5;
+  width: 34%;
+  height: 9%;
+  background: linear-gradient(180deg, #171514, #020202 68%, #15100d);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.14),
+    0 8px 22px rgb(0 0 0 / 0.36);
+  transform: translateX(-50%);
+}
+
+.footer-lantern-cap-top {
+  top: 35%;
+  border-radius: 8px 8px 4px 4px;
+}
+
+.footer-lantern-cap-bottom {
+  bottom: -14%;
+  border-radius: 4px 4px 8px 8px;
+}
+
+.footer-lantern-body {
+  position: absolute;
+  inset: 41% 0 -12%;
+  overflow: hidden;
+  border-radius: 45% / 9.5%;
+  background:
+    radial-gradient(
+      ellipse at 50% 43%,
+      var(--lantern-glow) 0%,
+      var(--lantern-mid) 35%,
+      var(--lantern-main) 62%,
+      var(--lantern-shadow) 112%
+    ),
+    repeating-linear-gradient(
+      180deg,
+      rgb(255 235 166 / 0.12) 0 2px,
+      transparent 3px 11px,
+      rgb(91 15 4 / 0.18) 12px 13px,
+      transparent 14px 20px
+    ),
+    linear-gradient(
+      90deg,
+      rgb(45 7 3 / 0.52),
+      transparent 16%,
+      transparent 84%,
+      rgb(48 7 4 / 0.55)
+    );
+  box-shadow:
+    inset 20px 0 34px rgb(80 9 2 / 0.42),
+    inset -22px 0 38px rgb(54 6 2 / 0.44),
+    inset 0 26px 36px rgb(255 229 154 / 0.26),
+    inset 0 -28px 38px rgb(87 8 2 / 0.32),
+    0 0 18px color-mix(in srgb, var(--lantern-main), transparent 66%),
+    0 16px 42px rgb(0 0 0 / 0.48);
+}
+
+.footer-lantern-body::before {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  content: "";
+  background:
+    linear-gradient(
+      90deg,
+      rgb(0 0 0 / 0.46),
+      transparent 14%,
+      rgb(255 243 188 / 0.18) 49%,
+      transparent 86%,
+      rgb(0 0 0 / 0.48)
+    ),
+    repeating-linear-gradient(
+      180deg,
+      rgb(105 22 6 / 0.36) 0 1px,
+      rgb(255 238 172 / 0.2) 2px 3px,
+      transparent 4px 12px,
+      rgb(43 7 2 / 0.24) 13px 14px,
+      transparent 15px 22px
+    );
+  mix-blend-mode: multiply;
+  opacity: 0.76;
+}
+
+.footer-lantern-body::after {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  content: "";
+  background:
+    linear-gradient(
+      90deg,
+      rgb(0 0 0 / 0.42),
+      transparent 12%,
+      rgb(255 255 255 / 0.08) 48%,
+      transparent 88%,
+      rgb(0 0 0 / 0.46)
+    ),
+    linear-gradient(
+      180deg,
+      rgb(255 248 191 / 0.28),
+      transparent 15%,
+      transparent 82%,
+      rgb(85 7 1 / 0.24)
+    );
+  pointer-events: none;
+}
+
+.footer-lantern-inner-light {
+  position: absolute;
+  inset: 5% 12% 9%;
+  z-index: 1;
+  border-radius: 48% / 13%;
+  background: radial-gradient(
+    ellipse at 50% 42%,
+    rgb(255 244 181 / 0.68),
+    rgb(255 179 62 / 0.32) 34%,
+    transparent 72%
+  );
+  filter: blur(14px);
+  mix-blend-mode: screen;
+  animation: footer-lantern-light 4.8s ease-in-out infinite;
+}
+
+.footer-lantern-paper-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    linear-gradient(
+      112deg,
+      transparent 0 33%,
+      rgb(255 255 255 / 0.12) 34% 36%,
+      transparent 37% 100%
+    ),
+    repeating-linear-gradient(
+      88deg,
+      rgb(255 244 191 / 0.07) 0 1px,
+      transparent 1px 8px
+    );
+  filter: blur(0.14px);
+  mix-blend-mode: soft-light;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.footer-lantern-ridges {
+  position: absolute;
+  inset: 2% 0;
+  z-index: 4;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 9px,
+    rgb(255 238 177 / 0.32) 10px 11px,
+    rgb(70 8 2 / 0.38) 12px 13px,
+    transparent 14px 20px
+  );
+  box-shadow:
+    inset 0 1px 0 rgb(255 245 198 / 0.2),
+    inset 0 -1px 0 rgb(66 8 2 / 0.28);
+  mix-blend-mode: multiply;
+  opacity: 0.68;
+  pointer-events: none;
+}
+
+@keyframes paper-crane-idle-sway {
+  0%,
+  100% {
+    rotate: -1.05deg;
+    translate: -3px 0;
+  }
+  50% {
+    rotate: 1.12deg;
+    translate: 3px 0;
+  }
+}
+
+@keyframes footer-lantern-idle-sway {
+  0%,
+  100% {
+    rotate: -1.15deg;
+    translate: -2px 0;
+  }
+  50% {
+    rotate: 1.08deg;
+    translate: 2px 0;
+  }
+}
+
+@keyframes footer-lantern-light {
+  0%,
+  100% {
+    opacity: 0.58;
+    scale: 0.985;
+  }
+  45% {
+    opacity: 0.76;
+    scale: 1.025;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-lantern-stage {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .footer-lantern-mount {
+    --footer-lantern-edge: 94px;
+    --footer-lantern-width: clamp(92px, 24vw, 106px);
+    --footer-stick-length: 132px;
+    top: 30px;
+    width: 190px;
+  }
+
+  .footer-lantern-side {
+    width: var(--footer-lantern-width);
+  }
+
+  .footer-lantern-left {
+    left: var(--footer-lantern-edge);
+    right: auto;
+  }
+
+  .footer-lantern-right {
+    right: var(--footer-lantern-edge);
+    left: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paper-crane-garland,
+  .footer-lantern-suspension,
+  .footer-lantern-inner-light {
+    animation: none;
+  }
+}

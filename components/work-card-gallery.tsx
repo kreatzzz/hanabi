@@ -33,7 +33,9 @@ function TileFill({
           />
         </div>
       )}
-      <div className={`absolute inset-0 ${image.mobileSrc ? "hidden sm:block" : ""}`}>
+      <div
+        className={`absolute inset-0 ${image.mobileSrc ? "hidden sm:block" : ""}`}
+      >
         <RevealImage
           src={image.src}
           alt={image.alt}
@@ -101,18 +103,16 @@ function GalleryThree({
 }) {
   return (
     <>
-      {/* Mobile / Tablet: 2 on top, 1 below centered */}
-      <div className="flex h-full w-full flex-col gap-3 p-3 sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:gap-2 sm:p-4 md:hidden">
-        <div className="relative min-h-0">
-          <TileFill image={images[0]} sizes="42vw" />
+      {/* Mobile / Tablet: phone / desktop / phone composition. */}
+      <div className="grid h-full w-full grid-cols-[0.78fr_1.55fr_0.78fr] items-center gap-2 p-2 sm:gap-3 sm:p-4 md:hidden">
+        <div className="relative h-full min-h-0">
+          <TileFill image={images[0]} sizes="(max-width: 640px) 24vw, 24vw" />
         </div>
-        <div className="relative hidden min-h-0 sm:block">
-          <TileFill image={images[1]} sizes="42vw" />
+        <div className="relative h-full min-h-0">
+          <TileFill image={images[1]} sizes="(max-width: 640px) 46vw, 42vw" />
         </div>
-        <div className="relative col-span-1 min-h-0 sm:col-span-2 sm:flex sm:justify-center">
-          <div className="relative h-full w-full sm:w-3/5">
-            <TileFill image={images[2]} sizes="42vw" />
-          </div>
+        <div className="relative h-full min-h-0">
+          <TileFill image={images[2]} sizes="(max-width: 640px) 24vw, 24vw" />
         </div>
       </div>
 

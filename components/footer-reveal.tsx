@@ -15,17 +15,48 @@ export default function FooterReveal({
     const el = footerRef.current;
     if (!el) return;
 
-    const update = () => setFooterHeight(el.getBoundingClientRect().height);
+    let frameId = 0;
+    let observedChild: Element | null = null;
+    let ro: ResizeObserver | null = null;
+
+    const measure = () => {
+      const child = el.firstElementChild;
+      const measuredElement = child ?? el;
+
+      setFooterHeight(measuredElement.getBoundingClientRect().height);
+
+      if (ro && child && child !== observedChild) {
+        if (observedChild) {
+          ro.unobserve(observedChild);
+        }
+
+        ro.observe(child);
+        observedChild = child;
+      }
+    };
+
+    const update = () => {
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(measure);
+    };
+
     update();
 
     if (typeof ResizeObserver !== "undefined") {
-      const ro = new ResizeObserver(update);
+      ro = new ResizeObserver(update);
       ro.observe(el);
-      return () => ro.disconnect();
     }
 
+    const mo = new MutationObserver(update);
+    mo.observe(el, { childList: true });
+
     window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
+    return () => {
+      cancelAnimationFrame(frameId);
+      ro?.disconnect();
+      mo.disconnect();
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
   return (
