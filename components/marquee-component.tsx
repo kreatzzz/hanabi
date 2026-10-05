@@ -3,7 +3,7 @@
 import { SeamlessMarquee } from "@/components/seamless-marquee";
 import Image from "next/image";
 import ShowreelVideo from "@/components/showreel-video";
-import { memo } from "react";
+import { Fragment, memo } from "react";
 import { marketingAssetUrl } from "@/lib/marketing-assets";
 
 const MARQUEE_SPEED = 64;
@@ -42,9 +42,11 @@ export default function MarqueeComponent({ items }: { items: string[] }) {
     <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden">
       <SeamlessMarquee speed={MARQUEE_SPEED}>
         <div className="flex shrink-0 items-center gap-4 pr-4 sm:gap-6 sm:pr-6">
-          <ShowreelVideo />
           {items.map((item, index) => (
-            <MarqueeItem key={`${item}-${index}`} item={item} index={index} />
+            <Fragment key={`${item}-${index}`}>
+              <MarqueeItem item={item} index={index} />
+              {index === 3 ? <ShowreelVideo /> : null}
+            </Fragment>
           ))}
         </div>
       </SeamlessMarquee>
