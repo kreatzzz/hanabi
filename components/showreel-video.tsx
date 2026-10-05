@@ -28,20 +28,25 @@ export default function ShowreelVideo() {
     };
   }, []);
   return (
-    <video
-      ref={videoRef}
-      className="h-52 w-auto shrink-0 rounded-lg bg-black object-contain sm:h-72 md:h-80"
-      style={{ aspectRatio: "480 / 1044" }}
-      src={marketingAssetUrl("hero-projects/go-gym-reel.mp4")}
-      poster={marketingAssetUrl("hero-projects/go-gym-poster.webp")}
-      aria-label="Go Gym product and onboarding showreel"
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      controls={false}
-      disablePictureInPicture
-    />
+    <div
+      className="flex h-52 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white py-4 sm:h-72 sm:py-6 md:h-80"
+      style={{ aspectRatio: "45 / 32" }}
+    >
+      <video
+        ref={videoRef}
+        className="h-full w-auto max-w-full object-contain"
+        style={{ aspectRatio: "480 / 1044" }}
+        src={marketingAssetUrl("hero-projects/go-gym-reel.mp4")}
+        poster={marketingAssetUrl("hero-projects/go-gym-poster.webp")}
+        aria-label="Go Gym product and onboarding showreel"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        controls={false}
+        disablePictureInPicture
+      />
+    </div>
   );
 }
