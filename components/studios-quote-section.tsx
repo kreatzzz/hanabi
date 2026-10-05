@@ -2,6 +2,7 @@ import { Reveal } from "@/components/reveal";
 import TeamMembersList from "@/components/team-members-list";
 import { Sawarabi_Gothic } from "next/font/google";
 import Image from "next/image";
+import { marketingAssetUrl } from "@/lib/marketing-assets";
 
 const sawarabiGothic = Sawarabi_Gothic({
   subsets: ["latin"],
@@ -12,31 +13,31 @@ const teamMembers = [
   {
     name: "Krish",
     role: "Designer",
-    avatarSrc: "/team/krish.png",
-    bannerSrc: "/team/krish-banner.png",
+    avatarSrc: marketingAssetUrl("team/krish.png"),
+    bannerSrc: marketingAssetUrl("team/krish-banner.png"),
     quote: "Focus only on your art",
     fireflies: true,
   },
   {
     name: "Dey",
     role: "Developer",
-    avatarSrc: "/team/dey.png",
-    bannerSrc: "/team/dey-banner.webp",
+    avatarSrc: marketingAssetUrl("team/dey.png"),
+    bannerSrc: marketingAssetUrl("team/dey-banner.webp"),
     quote: "Compassion and empathy",
     unoptimizedBanner: true,
   },
   {
     name: "Sagarika",
     role: "Designer",
-    avatarSrc: "/team/sagarika.png",
-    bannerSrc: "/team/sagarika-banner.webp",
+    avatarSrc: marketingAssetUrl("team/sagarika.png"),
+    bannerSrc: marketingAssetUrl("team/sagarika-banner.webp"),
     quote: "It's all about the mindset",
   },
   {
     name: "Arsh",
     role: "Developer",
-    avatarSrc: "/team/arsh.png",
-    bannerSrc: "/team/arsh-banner.webp",
+    avatarSrc: marketingAssetUrl("team/arsh.png"),
+    bannerSrc: marketingAssetUrl("team/arsh-banner.webp"),
     quote: "Clean builds, quiet wonder",
     unoptimizedBanner: true,
   },
@@ -49,9 +50,9 @@ export default function StudiosQuoteSection() {
       className="relative overflow-hidden bg-[#F6F6F6] px-5 pt-10 pb-24 text-center sm:pt-14 sm:pb-28"
     >
       <Reveal>
-        <h3 className="font-mono text-lg font-medium text-[#6C6C6C] uppercase sm:text-xl">
+        <p className="font-mono text-lg font-medium text-[#6C6C6C] uppercase sm:text-xl">
           Who We Are
-        </h3>
+        </p>
       </Reveal>
 
       <Reveal delay={0.06}>

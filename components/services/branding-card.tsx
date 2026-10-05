@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { marketingAssetUrl } from "@/lib/marketing-assets";
 
 type HoveredIndex = 0 | 1 | 2 | null;
 
@@ -28,7 +29,7 @@ export function BrandingCard() {
   return (
     <div
       style={{
-        backgroundImage: "url('/gradients/mesh3.webp')",
+        backgroundImage: `url('${marketingAssetUrl("gradients/mesh3.webp")}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -77,7 +78,7 @@ export function BrandingCard() {
               )}
             >
               <Image
-                src="/Hanabi-branding/Desktop - 144.png"
+                src={marketingAssetUrl("Hanabi-branding/Desktop - 144.png")}
                 alt="Ballarat Box Sports"
                 width={1024}
                 height={768}
@@ -126,7 +127,7 @@ export function BrandingCard() {
               className="absolute top-[40px] left-[92px] h-[190px] w-[190px] overflow-hidden rounded-none shadow-[0_26px_46px_-28px_rgba(0,0,0,0.7)] will-change-transform sm:top-[35px] sm:left-[106px] sm:h-[200px] sm:w-[200px]"
             >
               <Image
-                src="/Hanabi-branding/Desktop - 113.png"
+                src={marketingAssetUrl("Hanabi-branding/Desktop - 113.png")}
                 alt="Nectar"
                 width={1024}
                 height={768}
@@ -171,7 +172,7 @@ export function BrandingCard() {
               className="absolute top-[56px] right-[14px] h-[190px] w-[190px] overflow-hidden rounded-none shadow-[0_28px_50px_-28px_rgba(0,0,0,0.65)] sm:top-[50px] sm:right-[30px] sm:h-[200px] sm:w-[200px]"
             >
               <Image
-                src="/Hanabi-branding/Hanabi 6.png"
+                src={marketingAssetUrl("Hanabi-branding/Hanabi 6.png")}
                 alt="Hibari"
                 width={1024}
                 height={768}

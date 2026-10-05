@@ -1,0 +1,9 @@
+:root {
+  --theme-elevation-0: #ffffff;
+  --theme-elevation-1000: #141414;
+  --theme-success-500: #247a47;
+}
+
+.template-default__wrap {
+  --nav-width: 280px;
+}

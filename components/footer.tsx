@@ -2,16 +2,18 @@ import type { CSSProperties } from "react";
 import FooterLiquidGlassButton from "@/components/footer-liquid-glass-button";
 import TransitionFireworksCanvas from "@/components/transition-fireworks-canvas";
 import Image from "next/image";
+import Link from "next/link";
 import { Sawarabi_Gothic } from "next/font/google";
 import { EMAIL, INSTAGRAM, LINKEDIN, TELEGRAM } from "@/lib/constants";
 import { siInstagram, siTelegram, type SimpleIcon } from "simple-icons";
+import { marketingAssetUrl } from "@/lib/marketing-assets";
 
 const sawarabiGothic = Sawarabi_Gothic({
   weight: "400",
   subsets: ["latin"],
 });
 
-const FOOTER_IMAGE = "/footer-orange.webp";
+const FOOTER_IMAGE = marketingAssetUrl("footer-orange.webp");
 const SHOW_FOOTER_TRANSITION_SECTION = false;
 
 const SOCIAL_LINKS = [
@@ -111,7 +113,7 @@ export default function Footer({ isActive = false }: { isActive?: boolean }) {
           aria-label="Footer artwork"
         >
           <Image
-            src="/footer-transition-orange.webp"
+            src={marketingAssetUrl("footer-transition-orange.webp")}
             alt=""
             fill
             quality={90}
@@ -161,21 +163,29 @@ export default function Footer({ isActive = false }: { isActive?: boolean }) {
         </div>
 
         <nav
-          className="absolute inset-x-0 bottom-8 z-30 flex justify-center gap-3 sm:bottom-10 sm:gap-4"
-          aria-label="Social links"
+          className="absolute inset-x-0 bottom-8 z-30 flex flex-col items-center gap-4 sm:bottom-10"
+          aria-label="Footer links"
         >
-          {SOCIAL_LINKS.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={social.label}
-              className="grid size-7 place-items-center text-[#AFAFAF] opacity-[0.78] transition-[opacity,transform] duration-200 hover:opacity-100 sm:size-8"
-            >
-              <SocialIcon icon={social.icon} label={social.label} />
-            </a>
-          ))}
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-white/75 underline-offset-4 transition-colors hover:text-white hover:underline"
+          >
+            Blog
+          </Link>
+          <div className="flex items-center justify-center gap-3 sm:gap-4">
+            {SOCIAL_LINKS.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={social.label}
+                className="grid size-7 place-items-center text-[#AFAFAF] opacity-[0.78] transition-[opacity,transform] duration-200 hover:opacity-100 sm:size-8"
+              >
+                <SocialIcon icon={social.icon} label={social.label} />
+              </a>
+            ))}
+          </div>
         </nav>
 
         <div className="absolute inset-0 z-10" aria-hidden="true">

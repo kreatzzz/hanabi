@@ -33,7 +33,9 @@ disabled on `/portal` and `/admin` so the app surfaces scroll natively.
   (`hanabi_portal`, `hanabi_admin`). Route protection is enforced in `proxy.ts`
   (Next 16's proxy/middleware). Passwords hashed with `bcryptjs`.
 - **File storage** — Cloudflare R2 (S3-compatible) via `lib/r2.ts`. Uploads go
-  through the admin-guarded `POST /api/admin/upload` route.
+  through the admin-guarded `POST /api/admin/upload` route. This portal bucket
+  is separate from the public marketing-image bucket described in the root
+  README.
 - **Markdown** — `react-markdown` + `remark-gfm`, styled in
   `components/portal/markdown.tsx` (trusted, admin-authored; raw HTML disabled).
 

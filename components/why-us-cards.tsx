@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { Reveal } from "@/components/reveal";
 import RevealImage from "@/components/reveal-image";
+import { marketingAssetUrl } from "@/lib/marketing-assets";
 
 type WhyUsItem = {
   title: string;
@@ -21,7 +22,7 @@ const WHY_US_ITEMS: WhyUsItem[] = [
     title: "Quality",
     description: "Every detail is reviewed with care before it reaches users.",
     image: {
-      src: "/whyus/quality.png",
+      src: marketingAssetUrl("whyus/quality.png"),
       alt: "Quality gradient with shield icon",
     },
     icon: "quality",
@@ -32,7 +33,7 @@ const WHY_US_ITEMS: WhyUsItem[] = [
     title: "Clean Code",
     description: "Readable, modular builds that stay easy to improve.",
     image: {
-      src: "/whyus/code.png",
+      src: marketingAssetUrl("whyus/code.png"),
       alt: "Clean code gradient with code icon",
     },
     icon: "code",
@@ -43,7 +44,7 @@ const WHY_US_ITEMS: WhyUsItem[] = [
     title: "Flexible",
     description: "A process that adapts as your priorities become clearer.",
     image: {
-      src: "/whyus/flexible.png",
+      src: marketingAssetUrl("whyus/flexible.png"),
       alt: "Flexible gradient with swirl icon",
     },
     icon: "flexible",
@@ -53,7 +54,10 @@ const WHY_US_ITEMS: WhyUsItem[] = [
   {
     title: "Speed",
     description: "Focused execution that keeps momentum without cutting care.",
-    image: { src: "/whyus/speed.png", alt: "Speed gradient with sprout icon" },
+    image: {
+      src: marketingAssetUrl("whyus/speed.png"),
+      alt: "Speed gradient with sprout icon",
+    },
     icon: "speed",
     iconClassName: "text-[#34D399]/70",
     variant: "bottom",
@@ -62,7 +66,7 @@ const WHY_US_ITEMS: WhyUsItem[] = [
     title: "Communication",
     description: "Clear updates, honest timelines, and fewer surprises.",
     image: {
-      src: "/whyus/communication.png",
+      src: marketingAssetUrl("whyus/communication.png"),
       alt: "Communication gradient with waveform icon",
     },
     icon: "communication",

@@ -7,7 +7,7 @@ import { logoutAdmin } from "@/app/admin/actions";
 import { BrandLogo } from "@/components/brand-logo";
 import { ThemeToggleButton } from "@/components/theme-toggle";
 import { ThemeSync } from "@/components/theme-sync";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 
 export const dynamic = "force-dynamic";
@@ -43,6 +43,12 @@ export default async function AdminLayout({
             </span>
           </Link>
           <div className="flex items-center gap-1">
+            <Link
+              href="/admin/cms-setup"
+              className={buttonVariants({ variant: "ghost", size: "sm" })}
+            >
+              Blog CMS
+            </Link>
             <ThemeToggleButton />
             <form action={logoutAdmin}>
               <Button variant="ghost" size="sm" type="submit">

@@ -1,3 +1,5 @@
+import { marketingAssetUrl } from "@/lib/marketing-assets";
+
 export type WorkProjectImage = {
   src: string;
   alt: string;
@@ -50,24 +52,24 @@ export const workProjects: readonly WorkProject[] = [
     contributors: ["krish"],
     images: [
       {
-        src: "/projects/go-gym-product.webp",
+        src: marketingAssetUrl("projects/go-gym-product.webp"),
         alt: "Go Gym workouts and personal dashboard screens",
       },
       {
-        src: "/projects/go-gym-onboarding.webp",
+        src: marketingAssetUrl("projects/go-gym-onboarding.webp"),
         alt: "Go Gym splash and activity selection screens",
       },
     ],
     videos: [
       {
-        src: "/projects/videos/go-gym-reel.mp4",
-        poster: "/projects/go-gym-cover-reel.webp",
+        src: marketingAssetUrl("projects/videos/go-gym-reel.mp4"),
+        poster: marketingAssetUrl("projects/go-gym-cover-reel.webp"),
         label: "Quick look",
         alt: "Go Gym product and onboarding reel",
       },
       {
-        src: "/projects/videos/go-gym-onboarding.mp4",
-        poster: "/projects/go-gym-cover.webp",
+        src: marketingAssetUrl("projects/videos/go-gym-onboarding.mp4"),
+        poster: marketingAssetUrl("projects/go-gym-cover.webp"),
         label: "Full onboarding",
         alt: "Go Gym complete onboarding from profile setup to the fitness dashboard",
       },
@@ -81,11 +83,11 @@ export const workProjects: readonly WorkProject[] = [
     contributors: ["krish", "dey"],
     images: [
       {
-        src: "/projects/tradeMoai1.png",
+        src: marketingAssetUrl("projects/tradeMoai1.png"),
         alt: "Trade Moai interface overview",
       },
       {
-        src: "/projects/tradeMoai2.png",
+        src: marketingAssetUrl("projects/tradeMoai2.png"),
         alt: "Trade Moai trading dashboard",
       },
     ],
@@ -99,15 +101,15 @@ export const workProjects: readonly WorkProject[] = [
     contributors: ["krish", "dey"],
     images: [
       {
-        src: "/projects/dtc1.png",
+        src: marketingAssetUrl("projects/dtc1.png"),
         alt: "Down The Cove hero screen",
       },
       {
-        src: "/projects/dtc2.png",
+        src: marketingAssetUrl("projects/dtc2.png"),
         alt: "Down The Cove feature section",
       },
       {
-        src: "/projects/dtc3.png",
+        src: marketingAssetUrl("projects/dtc3.png"),
         alt: "Down The Cove overview",
       },
     ],
@@ -121,15 +123,15 @@ export const workProjects: readonly WorkProject[] = [
     contributors: ["krish", "dey"],
     images: [
       {
-        src: "/projects/ballaratboxsports1.png",
+        src: marketingAssetUrl("projects/ballaratboxsports1.png"),
         alt: "Ballarat Box Sports hero screen",
       },
       {
-        src: "/projects/ballaratboxsports2.png",
+        src: marketingAssetUrl("projects/ballaratboxsports2.png"),
         alt: "Ballarat Box Sports feature section",
       },
       {
-        src: "/projects/ballaratboxsports3.png",
+        src: marketingAssetUrl("projects/ballaratboxsports3.png"),
         alt: "Ballarat Box Sports overview",
       },
     ],
@@ -143,15 +145,15 @@ export const workProjects: readonly WorkProject[] = [
     contributors: ["dey", "sagarika"],
     images: [
       {
-        src: "/projects/wabisabi1.png",
+        src: marketingAssetUrl("projects/wabisabi1.png"),
         alt: "Wabisabi hero screen",
       },
       {
-        src: "/projects/wabisabi2.png",
+        src: marketingAssetUrl("projects/wabisabi2.png"),
         alt: "Wabisabi feature section",
       },
       {
-        src: "/projects/wabisabi3.png",
+        src: marketingAssetUrl("projects/wabisabi3.png"),
         alt: "Wabisabi brand detail",
       },
     ],
@@ -164,15 +166,15 @@ export const workProjects: readonly WorkProject[] = [
     contributors: ["krish"],
     images: [
       {
-        src: "/projects/compops-dashboard.webp",
+        src: marketingAssetUrl("projects/compops-dashboard.webp"),
         alt: "Comp Ops game dashboard with upcoming tournaments and competition navigation",
       },
       {
-        src: "/projects/compops-organizations.webp",
+        src: marketingAssetUrl("projects/compops-organizations.webp"),
         alt: "Comp Ops organization workspace with teams, members, and activity",
       },
       {
-        src: "/projects/compops-landing.webp",
+        src: marketingAssetUrl("projects/compops-landing.webp"),
         alt: "Comp Ops landing page with leaderboard artwork and competition overview",
       },
     ],
@@ -186,11 +188,11 @@ export const workProjects: readonly WorkProject[] = [
     contributors: ["dey", "sagarika"],
     images: [
       {
-        src: "/projects/thomasbewick1.png",
+        src: marketingAssetUrl("projects/thomasbewick1.png"),
         alt: "Thomas Bewick hero and gallery",
       },
       {
-        src: "/projects/thomasbewick2.png",
+        src: marketingAssetUrl("projects/thomasbewick2.png"),
         alt: "Thomas Bewick engraving detail",
       },
     ],
@@ -198,17 +200,17 @@ export const workProjects: readonly WorkProject[] = [
   {
     title: "LEADLY",
     category: "WEB APP | PRODUCT UI",
-    liveUrl: "https://leadly.live",
+    liveUrl: "https://leadly.tryhanabi.com",
     description:
       "A streamlined lead management platform designed to help teams track, nurture, and convert prospects with clarity and speed.",
     contributors: ["arsh", "krish", "dey"],
     images: [
       {
-        src: "/projects/leadly1.png",
+        src: marketingAssetUrl("projects/leadly1.png"),
         alt: "Leadly dashboard overview",
       },
       {
-        src: "/projects/leadly2.png",
+        src: marketingAssetUrl("projects/leadly2.png"),
         alt: "Leadly lead details view",
       },
     ],

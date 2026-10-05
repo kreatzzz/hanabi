@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { animate, motion, useMotionValue, useTransform } from "motion/react";
 import { useEffect, useState } from "react";
+import { marketingAssetUrl } from "@/lib/marketing-assets";
 
 const ORBIT_RADIUS = 100;
 const CIRCLE_SIZE = 40;
@@ -164,7 +165,7 @@ export function DevelopmentCard() {
   return (
     <div
       style={{
-        backgroundImage: "url('/gradients/mesh1.webp')",
+        backgroundImage: `url('${marketingAssetUrl("gradients/mesh1.webp")}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

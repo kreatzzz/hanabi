@@ -8,6 +8,7 @@ import {
   type SimpleIcon,
 } from "simple-icons";
 import { InlineMarquee } from "./inline-marquee";
+import { marketingAssetUrl } from "@/lib/marketing-assets";
 
 const DESIGN_TOP_BADGES = [
   "Web Design",
@@ -86,7 +87,7 @@ export function DesignCard({ projects }: { projects: string[] }) {
   return (
     <div
       style={{
-        backgroundImage: "url('/gradients/mesh2.webp')",
+        backgroundImage: `url('${marketingAssetUrl("gradients/mesh2.webp")}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -118,7 +119,7 @@ export function DesignCard({ projects }: { projects: string[] }) {
                 style={{ width: 180, height: 130 }}
               >
                 <Image
-                  src={`/hero-projects/${project}.png`}
+                  src={marketingAssetUrl(`hero-projects/${project}.png`)}
                   alt={project}
                   width={180}
                   height={130}

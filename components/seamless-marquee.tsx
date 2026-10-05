@@ -1,7 +1,14 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useEffect, useRef } from "react";
+import { createContext, useContext, useEffect, useRef } from "react";
+
+const SeamlessMarqueeDuplicateContext = createContext(false);
+
+/** Whether the current child is rendered in the visual duplicate copy. */
+export function useSeamlessMarqueeDuplicate() {
+  return useContext(SeamlessMarqueeDuplicateContext);
+}
 
 type SeamlessMarqueeProps = {
   children: ReactNode;
@@ -135,12 +142,16 @@ export function SeamlessMarquee({
       }}
     >
       <div ref={trackRef} className="flex w-max will-change-transform">
-        <div ref={groupRef} className="flex shrink-0">
-          {children}
-        </div>
-        <div className="flex shrink-0" aria-hidden="true">
-          {children}
-        </div>
+        <SeamlessMarqueeDuplicateContext.Provider value={false}>
+          <div ref={groupRef} className="flex shrink-0">
+            {children}
+          </div>
+        </SeamlessMarqueeDuplicateContext.Provider>
+        <SeamlessMarqueeDuplicateContext.Provider value={true}>
+          <div className="flex shrink-0" aria-hidden="true">
+            {children}
+          </div>
+        </SeamlessMarqueeDuplicateContext.Provider>
       </div>
     </div>
   );
