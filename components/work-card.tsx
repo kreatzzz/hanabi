@@ -2,11 +2,9 @@ import HangingPaperCranes from "@/components/hanging-paper-cranes";
 import ProjectContributorMasks from "@/components/project-contributor-masks";
 import { LinkIcon } from "@/components/ui/link";
 import WorkCardGallery from "@/components/work-card-gallery";
-import WorkProjectShowcase from "@/components/work-project-showcase";
 import type {
   WorkProjectContributor,
   WorkProjectImages,
-  WorkProjectVideo,
 } from "@/data/work-projects";
 
 export type WorkCardProps = {
@@ -14,7 +12,7 @@ export type WorkCardProps = {
   category: string;
   description: string;
   images: WorkProjectImages;
-  videos?: readonly WorkProjectVideo[];
+  galleryLayout?: "screens";
   contributors: readonly WorkProjectContributor[];
   liveUrl?: string;
 };
@@ -26,7 +24,7 @@ export default function WorkCard({
   images,
   contributors,
   liveUrl,
-  videos,
+  galleryLayout,
 }: WorkCardProps) {
   return (
     <article className="flex w-full flex-col">
@@ -50,27 +48,32 @@ export default function WorkCard({
         </div>
 
         <div className="relative flex flex-col overflow-visible rounded-xl">
-          <div className="relative z-50 overflow-hidden rounded-t-xl rounded-b-none bg-[#FFF] shadow-sm inset-shadow-sm inset-shadow-black/20">
-            <HangingPaperCranes
-              seed={title}
-              variant="card"
-              className="hidden md:block"
-            />
+          <div
+            className={
+              galleryLayout === "screens"
+                ? "relative z-50 overflow-hidden"
+                : "relative z-50 overflow-hidden rounded-t-xl rounded-b-none bg-[#FFF] shadow-sm inset-shadow-sm inset-shadow-black/20"
+            }
+          >
+            {galleryLayout !== "screens" ? (
+              <HangingPaperCranes
+                seed={title}
+                variant="card"
+                className="hidden md:block"
+              />
+            ) : null}
             <div className="relative z-10 px-6 pt-4 pb-4 sm:px-9 sm:pt-5 sm:pb-5 md:px-12 md:pt-6 md:pb-6">
-              {videos?.length ? (
-                <WorkProjectShowcase images={images} videos={videos} />
-              ) : (
-                <WorkCardGallery
-                  images={images}
-                  mobileImageCorners="rounded"
-                  mobileThreeLayout={
-                    title === "DOWN THE COVE" ? "side-by-side" : "stacked"
-                  }
-                  desktopThreeLayout={
-                    title === "DOWN THE COVE" ? "side-by-side" : "overlap"
-                  }
-                />
-              )}
+              <WorkCardGallery
+                layout={galleryLayout}
+                images={images}
+                mobileImageCorners="rounded"
+                mobileThreeLayout={
+                  title === "DOWN THE COVE" ? "side-by-side" : "stacked"
+                }
+                desktopThreeLayout={
+                  title === "DOWN THE COVE" ? "side-by-side" : "overlap"
+                }
+              />
             </div>
             <ProjectContributorMasks contributors={contributors} />
           </div>
@@ -80,7 +83,13 @@ export default function WorkCard({
             className="relative z-40 h-2 bg-[#F6F6F6] sm:h-3"
           />
 
-          <div className="relative z-10 flex items-center justify-center rounded-t-none rounded-b-xl bg-[#FFF] px-5 py-3 shadow-sm inset-shadow-sm inset-shadow-black/20 sm:px-8">
+          <div
+            className={
+              galleryLayout === "screens"
+                ? "relative z-10 flex items-center justify-center px-5 py-3 sm:px-8"
+                : "relative z-10 flex items-center justify-center rounded-t-none rounded-b-xl bg-[#FFF] px-5 py-3 shadow-sm inset-shadow-sm inset-shadow-black/20 sm:px-8"
+            }
+          >
             <p className="font-inter max-w-2xl text-center text-base leading-relaxed font-normal text-[#1a1a1a] sm:text-[17px]">
               {description}
             </p>

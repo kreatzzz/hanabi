@@ -1,8 +1,8 @@
 const HERO_PROJECTS = [
   "ballaratboxsportsLogo",
-  "compopsDash",
+  "compopsDashboard",
   "dtcLogo",
-  "gotnextConcept",
+  "compopsOrganizations",
   "hibari",
   "leadlyHero",
   "moaiDashboard",

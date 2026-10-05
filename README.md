@@ -61,7 +61,7 @@ bun run start
 - `components/work-projects-list.tsx` owns the works list client interaction. It shows the first three projects initially, renders a blurred, non-interactive peek of the next project behind the rounded-full "See more" button with a `#E3E3E3/80` fill, light vertical gradient stroke, subtle layered shadows, and active scale feedback, then mounts the remaining projects on click.
 - `components/work-card.tsx` renders each work project shell, description, and clipped media area for decorative paper-crane garlands.
 - `components/work-card-gallery.tsx` handles project image layouts based on image count and explicitly lazy loads project gallery images.
-- `components/work-project-showcase.tsx` pairs project stills with native video controls and a clip selector; videos load when requested.
+- `components/showreel-video.tsx` autoplays the muted Go Gym clip in the hero showreel, pausing when offscreen or when reduced motion is requested.
 - `components/reveal.tsx` provides the viewport reveal/fade behavior used across the page and by newly mounted work projects.
 - `components/why-us-cards.tsx` renders the Why Us / Hanabi Difference cards, explicitly lazy loads their card images, and keeps separated mobile spacing for the Quality and Clean Code cards so they do not attach on narrow screens.
 - `components/studios-quote-section.tsx` renders the Studios/Who We Are quote, owns the team member data/order, and mounts the team list.
@@ -80,7 +80,7 @@ Images rendered through `RevealImage` also need an entry in `BLUR_ASSET_PATHS`. 
 bun run gen:blur
 ```
 
-The first three projects in `workProjects` are visible immediately. In the collapsed state, the next project appears only as a blurred, non-interactive peek behind "See more"; full additional projects stay unmounted until visitors click the button, so their existing `Reveal` viewport animation runs when they appear. Paper-crane garlands are anchored inside each project media box, clipped by that project box, with the left and right strings inset from the box sides and spanning top-to-bottom. Go Gym is the first featured project, with stills, a quick reel, and the full onboarding video. Comp Ops replaces Got Next using updated portfolio images, including in the hero marquee. Optional project `videos` use compressed MP4 files under `public/projects/videos`. Leadly lists Arsh, Krish, and Dey as contributors.
+The first three projects in `workProjects` are visible immediately. In the collapsed state, the next project appears only as a blurred, non-interactive peek behind "See more"; full additional projects stay unmounted until visitors click the button, so their existing `Reveal` viewport animation runs when they appear. Paper-crane garlands are anchored inside each project media box, clipped by that project box, with the left and right strings inset from the box sides and spanning top-to-bottom. Go Gym appears second, after Trade Moai, using four independent phone exports. Its frameless gallery shows four screens on desktop, three on tablets, two from 480px, and one on smaller phones. Its video appears only in the hero showreel and autoplays without controls. Comp Ops uses two dashboard exports, including in the hero marquee. Wabisabi retains two project images. Leadly lists Arsh, Krish, and Dey as contributors.
 
 ## Notes
 
@@ -93,3 +93,7 @@ The first three projects in `workProjects` are visible immediately. In the colla
 Marketing content images are stored in the dedicated Cloudflare R2 bucket `hanabi-marketing-assets` under immutable, versioned keys such as `v1/projects/dtc1.png`. The default public base URL is centralized in `lib/marketing-assets.ts`; `NEXT_PUBLIC_MARKETING_ASSET_BASE_URL` can replace it with a custom delivery domain without editing components.
 
 Hanabi logos, client logos, favicons, app icons, social icons, kite SVGs, the web manifest, and the Open Graph image remain in `public/`. Client portal uploads use their existing, separate R2 bucket and `R2_*` environment variables.
+
+### New portfolio media
+
+Comp Ops dashboard exports and the four individual Go Gym screens are bundled in `public/projects/`. The Go Gym autoplay showreel lives in `public/hero-projects/`. `lib/marketing-assets.ts` resolves these new files locally; existing marketing imagery continues using the dedicated R2 bucket. After publishing these exports to versioned marketing object keys, remove their entries from `BUNDLED_MARKETING_ASSETS`. Run `bun run gen:blur` after replacing covered images.

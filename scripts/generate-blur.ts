@@ -18,12 +18,21 @@ import { BLUR_ASSET_PATHS, marketingAssetUrl } from "../lib/marketing-assets";
 const OUTPUT_FILE = path.join(process.cwd(), "lib", "blur-placeholders.ts");
 
 async function blurDataUrlFor(imageUrl: string): Promise<string> {
+  if (imageUrl.startsWith("/"))
+    return toBlurDataUrl(
+      fs.readFileSync(path.join(process.cwd(), "public", imageUrl)),
+    );
+
   const response = await fetch(imageUrl);
   if (!response.ok) {
     throw new Error(`Could not fetch ${imageUrl}: ${response.status}`);
   }
 
   const source = Buffer.from(await response.arrayBuffer());
+  return toBlurDataUrl(source);
+}
+
+async function toBlurDataUrl(source: Buffer): Promise<string> {
   const buffer = await sharp(source)
     .resize(16, 16, { fit: "inside" })
     .webp({ quality: 40 })

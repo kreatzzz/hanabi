@@ -5,6 +5,7 @@ import RevealImage from "@/components/reveal-image";
 
 type GalleryProps = {
   images: readonly WorkProjectImage[];
+  layout?: "screens";
   mobileImageCorners?: "rounded" | "square";
   mobileThreeLayout?: "stacked" | "side-by-side";
   desktopThreeLayout?: "overlap" | "side-by-side";
@@ -250,7 +251,37 @@ export default function WorkCardGallery({
   mobileImageCorners = "rounded",
   mobileThreeLayout = "stacked",
   desktopThreeLayout = "overlap",
+  layout,
 }: GalleryProps) {
+  if (layout === "screens") {
+    const visibility = [
+      "block",
+      "hidden min-[480px]:block",
+      "hidden md:block",
+      "hidden lg:block",
+    ];
+    return (
+      <div className="grid h-[400px] grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:h-[440px] sm:gap-6 md:h-[420px] md:grid-cols-3 lg:h-[500px] lg:grid-cols-4 xl:h-[540px]">
+        {images.map((image, index) => (
+          <div
+            key={image.src}
+            className={"relative h-full min-w-0 " + visibility[index]}
+          >
+            <RevealImage
+              src={image.src}
+              alt={image.alt}
+              fill
+              loading="lazy"
+              sizes="(max-width: 479px) 230px, (max-width: 767px) 40vw, (max-width: 1023px) 27vw, 250px"
+              className="object-contain"
+              wrapperClassName="absolute inset-0"
+            />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   let inner: ReactNode;
 
   switch (images.length) {

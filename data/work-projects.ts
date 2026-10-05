@@ -6,13 +6,6 @@ export type WorkProjectImage = {
   mobileSrc?: string;
 };
 
-export type WorkProjectVideo = {
-  src: string;
-  poster: string;
-  alt: string;
-  label: string;
-};
-
 export type WorkProjectContributor = "krish" | "dey" | "sagarika" | "arsh";
 
 /**
@@ -38,43 +31,12 @@ export type WorkProject = {
   category: string;
   description: string;
   images: WorkProjectImages;
-  videos?: readonly WorkProjectVideo[];
+  galleryLayout?: "screens";
   contributors: readonly WorkProjectContributor[];
   liveUrl?: string;
 };
 
 export const workProjects: readonly WorkProject[] = [
-  {
-    title: "GO GYM",
-    category: "APP | DESIGN & DEVELOPMENT",
-    description:
-      "A fitness product concept with fluid onboarding, a bold visual identity, and a dashboard that turns daily activity into lasting habits.",
-    contributors: ["krish"],
-    images: [
-      {
-        src: marketingAssetUrl("projects/go-gym-product.webp"),
-        alt: "Go Gym workouts and personal dashboard screens",
-      },
-      {
-        src: marketingAssetUrl("projects/go-gym-onboarding.webp"),
-        alt: "Go Gym splash and activity selection screens",
-      },
-    ],
-    videos: [
-      {
-        src: marketingAssetUrl("projects/videos/go-gym-reel.mp4"),
-        poster: marketingAssetUrl("projects/go-gym-cover-reel.webp"),
-        label: "Quick look",
-        alt: "Go Gym product and onboarding reel",
-      },
-      {
-        src: marketingAssetUrl("projects/videos/go-gym-onboarding.mp4"),
-        poster: marketingAssetUrl("projects/go-gym-cover.webp"),
-        label: "Full onboarding",
-        alt: "Go Gym complete onboarding from profile setup to the fitness dashboard",
-      },
-    ],
-  },
   {
     title: "TRADE MOAI",
     category: "WEB APP | PRODUCT UI",
@@ -89,6 +51,32 @@ export const workProjects: readonly WorkProject[] = [
       {
         src: marketingAssetUrl("projects/tradeMoai2.png"),
         alt: "Trade Moai trading dashboard",
+      },
+    ],
+  },
+  {
+    title: "GO GYM",
+    category: "APP | DESIGN & DEVELOPMENT",
+    description:
+      "A fitness product concept with fluid onboarding, a bold visual identity, and a dashboard that turns daily activity into lasting habits.",
+    contributors: ["krish"],
+    galleryLayout: "screens",
+    images: [
+      {
+        src: marketingAssetUrl("projects/go-gym-splash.webp"),
+        alt: "Go Gym splash screen",
+      },
+      {
+        src: marketingAssetUrl("projects/go-gym-activity.webp"),
+        alt: "Go Gym physical activity selection",
+      },
+      {
+        src: marketingAssetUrl("projects/go-gym-workouts.webp"),
+        alt: "Go Gym workout library",
+      },
+      {
+        src: marketingAssetUrl("projects/go-gym-me.webp"),
+        alt: "Go Gym personal dashboard",
       },
     ],
   },
@@ -152,10 +140,6 @@ export const workProjects: readonly WorkProject[] = [
         src: marketingAssetUrl("projects/wabisabi2.png"),
         alt: "Wabisabi feature section",
       },
-      {
-        src: marketingAssetUrl("projects/wabisabi3.png"),
-        alt: "Wabisabi brand detail",
-      },
     ],
   },
   {
@@ -172,10 +156,6 @@ export const workProjects: readonly WorkProject[] = [
       {
         src: marketingAssetUrl("projects/compops-organizations.webp"),
         alt: "Comp Ops organization workspace with teams, members, and activity",
-      },
-      {
-        src: marketingAssetUrl("projects/compops-landing.webp"),
-        alt: "Comp Ops landing page with leaderboard artwork and competition overview",
       },
     ],
   },
