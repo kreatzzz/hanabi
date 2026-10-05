@@ -56,7 +56,7 @@ export const workProjects: readonly WorkProject[] = [
   },
   {
     title: "GO GYM",
-    category: "APP | DESIGN & DEVELOPMENT",
+    category: "APP DESIGN",
     description:
       "A fitness product concept with fluid onboarding, a bold visual identity, and a dashboard that turns daily activity into lasting habits.",
     contributors: ["krish"],
@@ -73,10 +73,6 @@ export const workProjects: readonly WorkProject[] = [
       {
         src: marketingAssetUrl("projects/go-gym-workouts.webp"),
         alt: "Go Gym workout library",
-      },
-      {
-        src: marketingAssetUrl("projects/go-gym-me.webp"),
-        alt: "Go Gym personal dashboard",
       },
     ],
   },

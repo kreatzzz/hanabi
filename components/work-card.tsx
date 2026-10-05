@@ -48,13 +48,7 @@ export default function WorkCard({
         </div>
 
         <div className="relative flex flex-col overflow-visible rounded-xl">
-          <div
-            className={
-              galleryLayout === "screens"
-                ? "relative z-50 overflow-hidden"
-                : "relative z-50 overflow-hidden rounded-t-xl rounded-b-none bg-[#FFF] shadow-sm inset-shadow-sm inset-shadow-black/20"
-            }
-          >
+          <div className="relative z-50 overflow-hidden rounded-t-xl rounded-b-none bg-[#FFF] shadow-sm inset-shadow-sm inset-shadow-black/20">
             {galleryLayout !== "screens" ? (
               <HangingPaperCranes
                 seed={title}
@@ -83,13 +77,7 @@ export default function WorkCard({
             className="relative z-40 h-2 bg-[#F6F6F6] sm:h-3"
           />
 
-          <div
-            className={
-              galleryLayout === "screens"
-                ? "relative z-10 flex items-center justify-center px-5 py-3 sm:px-8"
-                : "relative z-10 flex items-center justify-center rounded-t-none rounded-b-xl bg-[#FFF] px-5 py-3 shadow-sm inset-shadow-sm inset-shadow-black/20 sm:px-8"
-            }
-          >
+          <div className="relative z-10 flex items-center justify-center rounded-t-none rounded-b-xl bg-[#FFF] px-5 py-3 shadow-sm inset-shadow-sm inset-shadow-black/20 sm:px-8">
             <p className="font-inter max-w-2xl text-center text-base leading-relaxed font-normal text-[#1a1a1a] sm:text-[17px]">
               {description}
             </p>

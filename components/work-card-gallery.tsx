@@ -254,14 +254,9 @@ export default function WorkCardGallery({
   layout,
 }: GalleryProps) {
   if (layout === "screens") {
-    const visibility = [
-      "block",
-      "hidden min-[480px]:block",
-      "hidden md:block",
-      "hidden lg:block",
-    ];
+    const visibility = ["block", "hidden min-[480px]:block", "hidden md:block"];
     return (
-      <div className="grid h-[400px] grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:h-[440px] sm:gap-6 md:h-[420px] md:grid-cols-3 lg:h-[500px] lg:grid-cols-4 xl:h-[540px]">
+      <div className="grid h-[400px] grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:h-[440px] sm:gap-6 md:h-[420px] md:grid-cols-3 lg:h-[500px] xl:h-[540px]">
         {images.map((image, index) => (
           <div
             key={image.src}
