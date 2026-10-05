@@ -10,6 +10,12 @@ export const blurPlaceholders: Record<string, string> = {
     "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAsAA4BaJZwAAxZnDuhKAAD+9Qaj1NAK7joKBSI4DhpC+u/oaEWtSavg8sUN5G3GtbfcdDlofmeNrA89JouBssn6FqAA",
   "/projects/ballaratboxsports3.png":
     "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACQAQCdASoQAAsAA4BaJbACdADyvAAA/FHYL5FUI45FFHpsPaMaS6XIb/4D+Jf5WrfAAA==",
+  "/projects/compops-dashboard.webp":
+    "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoQAAsAA4BaJZwAAuduqKgH4kAA/vSeAAkbN+3K3090grCF6QjLqMwVOY9gO+l0sW9p28DCaAA=",
+  "/projects/compops-landing.webp":
+    "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACwAQCdASoQAAsAA4BaJZQC7AEO9p5AAP75FxkpDlFAcjYmyxF+S93w7ugG9Kq0ZIGKolxiHCXQAAAA",
+  "/projects/compops-organizations.webp":
+    "data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAwAQCdASoQAAsAA4BaJaQAA3AA/vNyhg4BPnOad4AAAA==",
   "/projects/downthecoveSmall.png":
     "data:image/webp;base64,UklGRtQAAABXRUJQVlA4WAoAAAAQAAAADwAADQAAQUxQSD0AAAABBkaRJCnyb2pVMMN5YOjfkoOJCLJJmwjd+siFjv3tRd2e9dHfhrt/i1ttoshVk/QMbT/K9zd9yP052n3wAFZQOCBwAAAAUAIAnQEqEAAOAAOAWiWoAnRH/4GPYVW1L1XAAP7XzuBWEdWleChOXY8o2GYRq8AXYFtKaoVEGbbXlo1Z62TsgB/Sn1N7nyCb77oySiKT7/B7Hvc6nZ9EHEw2cMl6/C7F+ASBLA+gcRnJY+Ii0e6wAA==",
   "/projects/dtc1.png":
@@ -18,10 +24,14 @@ export const blurPlaceholders: Record<string, string> = {
     "data:image/webp;base64,UklGRqYAAABXRUJQVlA4WAoAAAAQAAAADAAADwAAQUxQSBoAAAABF3D0/4iIwSDbSLt3nORUXyCi/8mLOoDqAFZQOCBmAAAA8AEAnQEqDQAQAAOAWiWwAnQAuDUh0JiQAP7iGlFojiHNAm4Vfw7kC6L2sjK6+Ns3KmdK2x8O7TNjQXnHIDByt6Gbn2AECWDXSvaJo+LM3ry31BKLYKUBjvoYK/yZyoubUYmCYAAA",
   "/projects/dtc3.png":
     "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoHABAAA4BaJYwC7AD6A+y8AAD+8j08FoKbNMvvyRd+YNv2WbIq0ylbmWGe7ovj/1mUs861b75l2Bl7JK1BN3Sd46TpXDnRvwAAAA==",
-  "/projects/gotnextDashboard.png":
-    "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAABwAQCdASoQAAkAA4BaJaUwAAGIAAD+9F4uVkIDdbP4uwgAAAA=",
-  "/projects/gotnextHero.png":
-    "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoQAAkAA4BaJYwAAp0uFFrAAP75GHKMWTqI/rFK8FeMMB7mXCHmk5lLda3qAAAA",
+  "/projects/go-gym-cover-reel.webp":
+    "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoHABAAA4BaJYwBTAA9ESZ72hgAAP712cvFPLO9U/6EYORF3kU4o8Uq2wl1EsXa/cpP5lh0roEZMyTnymT8MI3gAAA=",
+  "/projects/go-gym-cover.webp":
+    "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoHABAAA4BaJYwBTAA9ESZ72hgAAP712cvFPLO9U/6EYORF3kU4o8Uq2wl1EsXa/fuJeZYdOjfXtmPCiUyfhhG8AAA=",
+  "/projects/go-gym-onboarding.webp":
+    "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQAgCdASoQAAsAA4BaJZwAD5GwfmsgmIJS2AAA/uvHEYvXbAbjixRMsHL+y4UQll7arLEav8m7l6iO5zmmqZqM37E15+BuRhvfYUvbQQEuvG0VDm7OsblPlK2Y8LRBnGnj5fKXfZGLagAA",
+  "/projects/go-gym-product.webp":
+    "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQAgCdASoQAAsAA4BaJYwAAuukGFPGplMAAP7rxxGLNo6NacZo3FgYfP+wUlEBP11tt6CFrNT2mPeX1MIpJqRB+9y362XeEYdLd7aZFN2Pb2bUOGbWhy2n4FJ64aR2Tw2kmay7wrdodHla/IOXtt4QTAgAAA==",
   "/projects/leadly1.png":
     "data:image/webp;base64,UklGRl4AAABXRUJQVlA4WAoAAAAQAAAADwAACgAAQUxQSBMAAAABD3D//4iIIBZM8pfeG0JE/7MFAFZQOCAkAAAAMAEAnQEqEAALAAOAWiWkAANwAP7x4mGdttdfLQcRFsxs0AAA",
   "/projects/leadly2.png":

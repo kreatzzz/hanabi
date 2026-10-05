@@ -4,12 +4,14 @@ export type WorkProjectImage = {
   mobileSrc?: string;
 };
 
-export type WorkProjectContributor =
-  | "krish"
-  | "roy"
-  | "dey"
-  | "sagarika"
-  | "arsh";
+export type WorkProjectVideo = {
+  src: string;
+  poster: string;
+  alt: string;
+  label: string;
+};
+
+export type WorkProjectContributor = "krish" | "dey" | "sagarika" | "arsh";
 
 /**
  * Layout follows image count (see `work-card-gallery.tsx`):
@@ -34,11 +36,43 @@ export type WorkProject = {
   category: string;
   description: string;
   images: WorkProjectImages;
+  videos?: readonly WorkProjectVideo[];
   contributors: readonly WorkProjectContributor[];
   liveUrl?: string;
 };
 
 export const workProjects: readonly WorkProject[] = [
+  {
+    title: "GO GYM",
+    category: "APP | DESIGN & DEVELOPMENT",
+    description:
+      "A fitness product concept with fluid onboarding, a bold visual identity, and a dashboard that turns daily activity into lasting habits.",
+    contributors: ["krish"],
+    images: [
+      {
+        src: "/projects/go-gym-product.webp",
+        alt: "Go Gym workouts and personal dashboard screens",
+      },
+      {
+        src: "/projects/go-gym-onboarding.webp",
+        alt: "Go Gym splash and activity selection screens",
+      },
+    ],
+    videos: [
+      {
+        src: "/projects/videos/go-gym-reel.mp4",
+        poster: "/projects/go-gym-cover-reel.webp",
+        label: "Quick look",
+        alt: "Go Gym product and onboarding reel",
+      },
+      {
+        src: "/projects/videos/go-gym-onboarding.mp4",
+        poster: "/projects/go-gym-cover.webp",
+        label: "Full onboarding",
+        alt: "Go Gym complete onboarding from profile setup to the fitness dashboard",
+      },
+    ],
+  },
   {
     title: "TRADE MOAI",
     category: "WEB APP | PRODUCT UI",
@@ -123,20 +157,23 @@ export const workProjects: readonly WorkProject[] = [
     ],
   },
   {
-    title: "GOT NEXT",
+    title: "COMP OPS",
     category: "WEB APP | PRODUCT UI",
-    liveUrl: "https://gotnext.gg",
     description:
-      "A clean and focused product interface designed to help users discover, track, and engage with what matters most.",
+      "A competitive gaming platform bringing tournaments, leagues, and communities together, with clear tools for players and organizers.",
     contributors: ["krish"],
     images: [
       {
-        src: "/projects/gotnextHero.png",
-        alt: "Got Next hero screen",
+        src: "/projects/compops-dashboard.webp",
+        alt: "Comp Ops game dashboard with upcoming tournaments and competition navigation",
       },
       {
-        src: "/projects/gotnextDashboard.png",
-        alt: "Got Next dashboard overview",
+        src: "/projects/compops-organizations.webp",
+        alt: "Comp Ops organization workspace with teams, members, and activity",
+      },
+      {
+        src: "/projects/compops-landing.webp",
+        alt: "Comp Ops landing page with leaderboard artwork and competition overview",
       },
     ],
   },
@@ -164,7 +201,7 @@ export const workProjects: readonly WorkProject[] = [
     liveUrl: "https://leadly.live",
     description:
       "A streamlined lead management platform designed to help teams track, nurture, and convert prospects with clarity and speed.",
-    contributors: ["arsh", "roy"],
+    contributors: ["arsh", "krish", "dey"],
     images: [
       {
         src: "/projects/leadly1.png",

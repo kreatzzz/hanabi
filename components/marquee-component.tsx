@@ -6,7 +6,7 @@ import { memo } from "react";
 
 const MARQUEE_SPEED = 64;
 const HERO_PROJECT_ASPECT_RATIO = "45 / 32";
-const KNOWN_LCP_ITEMS = new Set(["gotnextConcept"]);
+const KNOWN_LCP_ITEMS = new Set(["compopsDashboard"]);
 
 const MarqueeItem = memo(function MarqueeItem({
   item,

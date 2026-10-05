@@ -2,9 +2,11 @@ import HangingPaperCranes from "@/components/hanging-paper-cranes";
 import ProjectContributorMasks from "@/components/project-contributor-masks";
 import { LinkIcon } from "@/components/ui/link";
 import WorkCardGallery from "@/components/work-card-gallery";
+import WorkProjectShowcase from "@/components/work-project-showcase";
 import type {
   WorkProjectContributor,
   WorkProjectImages,
+  WorkProjectVideo,
 } from "@/data/work-projects";
 
 export type WorkCardProps = {
@@ -12,6 +14,7 @@ export type WorkCardProps = {
   category: string;
   description: string;
   images: WorkProjectImages;
+  videos?: readonly WorkProjectVideo[];
   contributors: readonly WorkProjectContributor[];
   liveUrl?: string;
 };
@@ -23,6 +26,7 @@ export default function WorkCard({
   images,
   contributors,
   liveUrl,
+  videos,
 }: WorkCardProps) {
   return (
     <article className="flex w-full flex-col">
@@ -53,16 +57,20 @@ export default function WorkCard({
               className="hidden md:block"
             />
             <div className="relative z-10 px-6 pt-4 pb-4 sm:px-9 sm:pt-5 sm:pb-5 md:px-12 md:pt-6 md:pb-6">
-              <WorkCardGallery
-                images={images}
-                mobileImageCorners={title === "GOT NEXT" ? "square" : "rounded"}
-                mobileThreeLayout={
-                  title === "DOWN THE COVE" ? "side-by-side" : "stacked"
-                }
-                desktopThreeLayout={
-                  title === "DOWN THE COVE" ? "side-by-side" : "overlap"
-                }
-              />
+              {videos?.length ? (
+                <WorkProjectShowcase images={images} videos={videos} />
+              ) : (
+                <WorkCardGallery
+                  images={images}
+                  mobileImageCorners="rounded"
+                  mobileThreeLayout={
+                    title === "DOWN THE COVE" ? "side-by-side" : "stacked"
+                  }
+                  desktopThreeLayout={
+                    title === "DOWN THE COVE" ? "side-by-side" : "overlap"
+                  }
+                />
+              )}
             </div>
             <ProjectContributorMasks contributors={contributors} />
           </div>
