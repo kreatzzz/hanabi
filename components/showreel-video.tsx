@@ -29,12 +29,12 @@ export default function ShowreelVideo() {
   }, []);
   return (
     <div
-      className="flex h-52 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white py-4 sm:h-72 sm:py-6 md:h-80"
+      className="flex h-52 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-[#F5F5F5] py-4 sm:h-72 sm:py-6 md:h-80"
       style={{ aspectRatio: "45 / 32" }}
     >
       <video
         ref={videoRef}
-        className="h-full w-auto max-w-full object-contain"
+        className="h-full w-auto max-w-full overflow-hidden rounded-[14%/6.5%] object-contain"
         style={{ aspectRatio: "480 / 1044" }}
         src={marketingAssetUrl("hero-projects/go-gym-reel.mp4")}
         poster={marketingAssetUrl("hero-projects/go-gym-poster.webp")}
